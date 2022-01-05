@@ -39,7 +39,7 @@ export class ItemEditComponent implements OnInit {
     this.saved.emit();
   }
   ngOnDestroy() {
-    this.sub && this.sub.unsubscribe()
+    this.sub?.unsubscribe()
   }
 
 }

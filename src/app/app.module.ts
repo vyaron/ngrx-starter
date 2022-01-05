@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -25,9 +26,9 @@ import { ItemEditComponent } from './cmps/item-edit/item-edit.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    AppHeaderComponent,
     ItemAppComponent,
     ItemEditComponent,
-    AppHeaderComponent,
     ItemListComponent,
     ItemPreviewComponent,
   ],
@@ -35,6 +36,7 @@ import { ItemEditComponent } from './cmps/item-edit/item-edit.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

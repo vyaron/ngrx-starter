@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, from } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Item } from '../models/item';
 import { LoadingItems } from '../store/actions/item.actions';
 import { ItemState } from '../store/reducers/item.reducer';
@@ -13,7 +13,13 @@ const ENTITY = 'item'
   providedIn: 'root',
 })
 export class ItemService {
-  constructor(private store: Store<ItemState>) {
+  constructor(private store: Store<ItemState>, private http: HttpClient) {
+
+    // http.get('http://www.filltext.com/?rows=10&id={index}&name={username}')
+    // .subscribe(res => {
+    //   console.log('RES', res);
+    // })
+
     // If empty - load test data to storage
     const items = JSON.parse(localStorage.getItem(ENTITY) || 'null');
     if (!items || items.length === 0) {

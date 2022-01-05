@@ -20,7 +20,7 @@ export class ItemAppComponent implements OnInit {
   addingNew = false;
 
   filterBy: string = '';
-  // Yaron: Sadly, cannot get ItemState here
+
   constructor(private store: Store<State>) {
     this.items$ = this.store.select('itemState').pipe(pluck('items'));
     this.item$ = this.store.select('itemState').pipe(pluck('item'));

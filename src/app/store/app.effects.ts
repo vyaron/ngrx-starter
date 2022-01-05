@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { map, catchError, switchMap, tap, exhaustMap } from 'rxjs/operators';
+import { map, catchError, switchMap, tap } from 'rxjs/operators';
 import { ItemService } from '../services/item.service';
 import { ItemAction, SAVE_ITEM, ADDED_ITEM, UPDATED_ITEM, LOAD_ITEMS, LOADED_ITEMS, REMOVE_ITEM, REMOVED_ITEM, LOAD_ITEM, LOADED_ITEM, SET_ERROR } from './actions/item.actions';
 
@@ -40,7 +40,7 @@ export class AppEffects {
           tap(() => console.log('Effects: Got item from service ===> Reducer')),
           map((item) => ({
             type: LOADED_ITEM,
-            item,
+            item
           })),
           catchError((error) => {
             console.log('Effect: Caught error ===> Reducer', error)

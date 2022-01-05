@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Item } from 'src/app/models/item';
+import { ItemListComponent } from '../item-list/item-list.component';
 
 @Component({
   selector: 'item-preview',
@@ -8,7 +9,9 @@ import { Item } from 'src/app/models/item';
 })
 export class ItemPreviewComponent implements OnInit {
   @Input() item: Item | null = null;
-  constructor() {}
+  constructor(private itemList: ItemListComponent) {
+    
+  }
 
   ngOnInit(): void {}
 }

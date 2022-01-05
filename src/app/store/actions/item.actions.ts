@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 import { Item } from 'src/app/models/item';
 
-export const SET_LOADING = '[item]s loading';
-export const SET_ERROR = '[item]s error';
+export const SET_LOADING = '[item] loading';
+export const SET_ERROR = '[item] error';
 export const LOAD_ITEMS = '[item]s load';
 export const LOAD_ITEM = '[item] load';
 export const LOADED_ITEM = '[item] loaded';
